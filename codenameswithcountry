@@ -1,0 +1,30 @@
+country_codes = {
+    "United States": "US",
+    "Canada": "CA",
+    "United Kingdom": "UK",
+    "India":"IN",
+    "Europe":"EU",
+    
+}
+
+def get_country_code(address):
+    country = None
+    if "United States" in address:
+        country = "United States"
+    elif "Canada" in address:
+        country = "Canada"
+    elif "United Kingdom" in address:
+        country = "United Kingdom"
+    elif "India" in address:
+        country= "India"
+    if country:
+        
+        return country_codes.get(country, "Country code not found for this country")
+    else:
+        return "Country not found in the address"
+
+if __name__ == "__main__":
+    address = input("Enter an address: ")
+    country_code = get_country_code(address)
+    print(f"Country code for the provided address: {country_code}")
+    
